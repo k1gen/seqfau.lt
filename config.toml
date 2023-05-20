@@ -1,0 +1,13 @@
+base_url = "https://seqfau.lt"
+title = "olk's blog"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+default_language = "en"
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+
+[extra]
+author = "olk"

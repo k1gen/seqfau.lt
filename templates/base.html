@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name='viewport' content='width=device-width,initial-scale=1'/>
+    <meta content='true' name='HandheldFriendly'/>
+    <meta content='width' name='MobileOptimized'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <title>{{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ get_url(path="favicon.png") }}"/>
+    <script
+      src="https://kit.fontawesome.com/93866eaaa9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+    <nav class="menu">
+      <div class="nav-left">
+        <ul>
+          <li>
+            <a href="/"
+              ><img class="logo" src="{{ get_url(path="favicon.png") }}" alt="" /><span
+                class="sitename"
+                >{{ config.title | lower }}</span
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul>
+        <li class="icons">
+            <a
+              title="Dark mode"
+              id="darkmodetoggle"
+              class="fas fa-moon"
+              onclick="switchTheme()"
+            ></a>
+        <a id="toggle-nav" onclick="toggleNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+          </li>
+        </ul>
+        <ul id="links">
+          <li><a href="https://t.me/k1gen">contact</a></li>
+          <li><a target="_blank" href="https://github.com/k1gen">github</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <body>
+    <section class="section">
+      <div class="container">{% block content %} {% endblock %}</div>
+    </section>
+    <script src="{{ get_url(path="darktheme.js", cachebust=true) }}" crossorigin="anonymous"></script>
+    <script src="{{ get_url(path="nav-toggle.js", cachebust=true) }}" crossorigin="anonymous"></script>
+  </body>
+</html>
